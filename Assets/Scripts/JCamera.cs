@@ -33,6 +33,7 @@ public class JCamera : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, ID
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(joystick2.rectTransform, red.position, red.pressEventCamera, out worldDelta);
         worldDelta = worldStartPoint - worldDelta;
+        worldStartPoint = worldDelta + worldStartPoint;
     }
 
     public Vector2 GetWorldDelta()
